@@ -19,11 +19,12 @@ class _SplashScreenState extends State<SplashScreen>
     AnimasiStart();
   }
 
+// durasi animasi
   AnimasiStart() async {
     var duration = const Duration(seconds: 4);
     return Timer(duration, () {
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => Welcome()));
+          context, MaterialPageRoute(builder: (context) => Welcome()) );
     });
   }
 

@@ -10,7 +10,7 @@ class _Home extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text('sds'),
+        child: Text('Hello'),
       ),
     );
   }

@@ -80,6 +80,9 @@ flutter:
     - family: impact
       fonts:
         - asset: assets/font/impact.ttf
+    - family: cookie
+      fonts:
+        - asset: assets/font/Cookie.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
