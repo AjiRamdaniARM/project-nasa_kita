@@ -1,20 +1,22 @@
+
 import 'package:flutter/material.dart';
-import 'package:nasa_kita/component/desktop/daftar.dart';
-class MasukMobile extends StatefulWidget {
- MasukMobile({
+import 'package:nasa_kita/component/desktop/masuk.dart';
+class DaftarMobile extends StatefulWidget {
+ DaftarMobile({
     Key? key,
   }) : super(key: key);
 
 
 
   @override
-  State<MasukMobile> createState() => _MasukMobileState();
+  State<DaftarMobile> createState() => _DaftarMobileState();
 }
 
-class _MasukMobileState extends State<MasukMobile> {
+class _DaftarMobileState extends State<DaftarMobile> {
   final _formKey = GlobalKey<FormState>();
-final nama = TextEditingController();
-final katasandi = TextEditingController();
+final namadaftar = TextEditingController();
+final katasandidaftar = TextEditingController();
+final alamatdaftar = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Center( 
@@ -38,7 +40,7 @@ final katasandi = TextEditingController();
         FittedBox(
           child: Container(
             margin: EdgeInsets.all(30),
-            child: Text('Masuk', style: TextStyle(
+            child: Text('Daftar', style: TextStyle(
             fontFamily: 'Mt_Bold',fontSize: 24
           ),),),
         ),
@@ -52,7 +54,7 @@ Container(
                 Padding(
                   padding: EdgeInsets.all(15),
                   child: TextFormField(
-                    controller: nama,
+                    controller: namadaftar,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10)),
@@ -63,8 +65,8 @@ Container(
                             width: 1.0),
                         borderRadius: BorderRadius.circular(10.0),
                       ),
-                      labelText: ' Nama',
-                      hintText: 'Masukkan Nama',
+                      labelText: ' Nama Lengkap',
+                      hintText: 'Masukkan Nama Anda',
                     ),
                     validator: (value) {
                       if (value!.isEmpty) {
@@ -77,7 +79,7 @@ Container(
                  Padding(
                   padding: EdgeInsets.all(15),
                   child: TextFormField(
-                    controller: katasandi,
+                    controller: katasandidaftar,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10)),
@@ -88,7 +90,31 @@ Container(
                         borderRadius: BorderRadius.circular(10.0),
                       ),
                       labelText: 'Kata Sandi',
-                      hintText: 'Masukkan Kata Sandi',
+                      hintText: 'Masukkan Kata Sandi Yang Kuat',
+                    ),
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'Kata Sandi tidak boleh kosong yaa';
+                      }
+                      return null;
+                    },
+                  ),
+                ),
+                 Padding(
+                  padding: EdgeInsets.all(15),
+                  child: TextFormField(
+                    controller: alamatdaftar,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10)),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: const BorderSide(
+                            color: Color.fromARGB(255, 0, 168, 28),
+                            width: 1.0),
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                      labelText: 'Alamat Lengkap',
+                      hintText: 'Masukkan Alamat Anda',
                     ),
                     validator: (value) {
                       if (value!.isEmpty) {
@@ -101,7 +127,7 @@ Container(
             
             
                  Container(
-      width: 340,
+      width: 330,
       height: 21,
       
       child: Row(
@@ -110,7 +136,7 @@ Container(
           Positioned(
         top: 0,
         left: 0,
-        child: Text('Belum punya akun?', textAlign: TextAlign.left, style: TextStyle(
+        child: Text('Punya Akun?', textAlign: TextAlign.left, style: TextStyle(
         color: Color.fromRGBO(102, 101, 101, 1),
         fontFamily: 'Poppins',
         fontSize: 14,
@@ -122,11 +148,11 @@ Container(
       
      InkWell(
       onTap: () => {
-        Navigator.push(context, MaterialPageRoute(builder: (context) => Daftar()))
+        Navigator.push(context, MaterialPageRoute(builder: (context) => Masuk()))
       },
       child:  Container(
 
-        child: Text('Buat akun baru', textAlign: TextAlign.left, style: TextStyle(
+        child: Text('Masuk Akun', textAlign: TextAlign.left, style: TextStyle(
         color: Color.fromRGBO(2, 148, 0, 1),
         fontFamily: 'Poppins',
         fontSize: 14,
@@ -159,7 +185,7 @@ Container(
                       ),
                       child: Center(
                         child: Text(
-                          "Masuk Akun",
+                          "Daftar Akun",
                           style: TextStyle(
                               color: Colors.white, fontFamily: 'Poppins-Bold'),
                         ),
@@ -173,7 +199,7 @@ Container(
     ),
   ),
       ),
-       Container(
+      Container(
       
         alignment: Alignment.topCenter,
         child:Stack(children: [

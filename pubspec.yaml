@@ -83,6 +83,9 @@ flutter:
     - family: cookie
       fonts:
         - asset: assets/font/Cookie.ttf
+    - family: Mt_Bold
+      fonts:
+        - asset: assets/font/MT_BOLD.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:nasa_kita/component/Mobile/DaftarMobile.dart';
 import 'package:nasa_kita/component/Mobile/MasukMobile.dart';
 import 'package:nasa_kita/responsive.dart';
 
-class Masuk extends StatefulWidget {
-   Masuk({super.key});
+class Daftar extends StatefulWidget {
+   Daftar({super.key});
 final _formKey = GlobalKey<FormState>();
 final nama = TextEditingController();
 final katasandi = TextEditingController();
   @override
-  State<Masuk> createState() => _MasukState();
+  State<Daftar>createState() => _DaftarState();
 }
 
-class _MasukState extends State<Masuk> {
+class _DaftarState extends State<Daftar>{
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -29,7 +30,7 @@ class _MasukState extends State<Masuk> {
       body: SafeArea(child: Responsive(tablet: Container(
       child: Text('Hello World'),
       ),
-      mobile: MasukMobile(),))
+      mobile: DaftarMobile(),))
       ),
     );
   }
