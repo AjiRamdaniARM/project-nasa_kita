@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:nasa_kita/component/desktop/Welcome.dart';
+import 'package:nasa_kita/component/desktop/masuk.dart';
 import 'package:nasa_kita/component/home_nasa.dart';
 import 'package:nasa_kita/responsive.dart';
 
@@ -24,21 +25,26 @@ class _WelcomeMobileState extends State<WelcomeMobile> {
   Widget build(BuildContext context) {
     
     return
+   
         Center(
-        heightFactor: 3,
+        heightFactor:1.9,
         child:  
         
         Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                         
       children: [
                     FittedBox(
                       child: Container(
-                        padding: EdgeInsets.all(2),
-                        width: 226,
+                   alignment: Alignment.center,
+               
+                      margin: EdgeInsets.only(left: 10, right: 10,),
+                        width: 256,
                         child: Text('Selamat Datang',
-                        textAlign: TextAlign.left, 
+                        textAlign: TextAlign.center, 
                         style: TextStyle(
                           fontFamily: 'Cookie', 
-                          fontSize: 90,
+                          fontSize: 80,
                           color: Colors.white,
                           fontWeight: FontWeight.normal,
                           height: 0.7,),),
@@ -46,20 +52,36 @@ class _WelcomeMobileState extends State<WelcomeMobile> {
                     ),
                     // widget text
                     Container(
-                      padding: EdgeInsets.only(top: 50),
+                      padding: EdgeInsets.only(top: 25),
                       child: Stack(children: [      
 
                         Column(
+                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                         
                           children: [
 
                             // button masuk
   InkWell(
-          onTap:null,
+          onTap:() => {
+            Navigator.push(context, MaterialPageRoute(builder: (context)=> Masuk()))
+          },
          
           child: Container(
-             width: 288,
-        height: 56,
+               margin: EdgeInsets.all(10),
+             width: 300,
+        height: 66,
         decoration: BoxDecoration(
+           boxShadow:[ 
+               BoxShadow(
+                  color: Color.fromARGB(255, 0, 0, 0).withOpacity(0.2 ), //color of shadow
+                  spreadRadius: 1, //spread radius
+                  blurRadius: 7, // blur radius
+                  offset: Offset(0, 5), // changes position of shadow
+                  //first paramerter of offset is left-right
+                  //second parameter is top to down
+               ),
+               //you can set more BoxShadow() here
+              ],
           borderRadius : BorderRadius.only(
             topLeft: Radius.circular(42),
             topRight: Radius.circular(42),
@@ -70,6 +92,12 @@ class _WelcomeMobileState extends State<WelcomeMobile> {
           color: Colors.white,
           width: 1,
         ),
+     gradient : LinearGradient(
+          begin: Alignment(1.093485951423645,0.015419178642332554),
+          end: Alignment(-0.015419179573655128,0.041343219578266144),
+          colors: [Color.fromRGBO(0, 255, 47, 1),Color.fromRGBO(104, 249, 51, 1)]
+        ),
+  
         ),
         
             child: Center(
@@ -80,12 +108,15 @@ class _WelcomeMobileState extends State<WelcomeMobile> {
 
         // button daftar
          InkWell(
-          onTap:null,
+          onTap: () => {
+            Navigator.push(context, MaterialPageRoute(builder: (context)=> Masuk()))
+          },
          
           child: Container(
-     
-             width: 288,
-        height: 56,
+            margin: EdgeInsets.all(10),
+ 
+             width: 300,
+        height: 66,
         decoration: BoxDecoration(
           borderRadius : BorderRadius.only(
             topLeft: Radius.circular(42),
@@ -104,6 +135,12 @@ class _WelcomeMobileState extends State<WelcomeMobile> {
             ),
           )
         ),
+
+        Container(
+          margin: EdgeInsets.all(30),
+          width: 86,
+          child: Image.asset("assets/image/nasa_kita.png"),
+        )
                             
                           ],
                         )
