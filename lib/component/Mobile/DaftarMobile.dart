@@ -204,8 +204,13 @@ Container(
         alignment: Alignment.topCenter,
         child:Stack(children: [
           FittedBox(
-            child: Container(
-          margin: EdgeInsets.only(left: 105, top: 45),
+
+            child: 
+            InkWell(
+              onTap: () => 
+              Navigator.pop(context),
+              child: Container(
+          margin: EdgeInsets.only(left: 105, top: 35),
               child: Text('Keluar', textAlign: TextAlign.left, style: TextStyle(
         color: Color.fromRGBO(255, 255, 255, 1),
         fontFamily: 'Poppins',
@@ -213,9 +218,13 @@ Container(
         letterSpacing: 0 /*percentages not used in flutter. defaulting to zero*/,
         fontWeight: FontWeight.bold,
         height: 1
-      ),)),
+      ),)), )
+            
+           
           ),
-          Container(child:  Image.asset("assets/image/nasa_kita.png", width: 270,),)
+
+          Container(height: 230,
+            child:  Image.asset("assets/image/nasa_kita.png", width: 270,),)
         ],)
         
         ,)

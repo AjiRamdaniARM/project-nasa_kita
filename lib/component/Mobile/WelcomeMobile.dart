@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:nasa_kita/component/desktop/Welcome.dart';
+import 'package:nasa_kita/component/desktop/daftar.dart';
 import 'package:nasa_kita/component/desktop/masuk.dart';
 import 'package:nasa_kita/component/home_nasa.dart';
 import 'package:nasa_kita/responsive.dart';
@@ -109,7 +110,7 @@ class _WelcomeMobileState extends State<WelcomeMobile> {
         // button daftar
          InkWell(
           onTap: () => {
-            Navigator.push(context, MaterialPageRoute(builder: (context)=> Masuk()))
+            Navigator.push(context, MaterialPageRoute(builder: (context)=> Daftar()))
           },
          
           child: Container(

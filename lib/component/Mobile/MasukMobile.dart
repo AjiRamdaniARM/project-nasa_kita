@@ -189,7 +189,8 @@ Container(
         height: 1
       ),)),
           ),
-          Container(child:  Image.asset("assets/image/nasa_kita.png", width: 270,),)
+        Container(height: 230,
+            child:  Image.asset("assets/image/nasa_kita.png", width: 270,),)
         ],)
         
         ,)

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nasa_kita/component/Mobile/WelcomeMobile.dart';
+import 'package:nasa_kita/component/desktop/daftar.dart';
+import 'package:nasa_kita/component/desktop/masuk.dart';
 import 'package:nasa_kita/responsive.dart';
 
 class Welcome extends StatefulWidget {
@@ -69,7 +71,9 @@ late Animation<double> _animation;
 
                             // button masuk
   InkWell(
-          onTap:null,
+           onTap:() => {
+            Navigator.push(context, MaterialPageRoute(builder: (context)=> Masuk()))
+          },
          
           child: Container(
                margin: EdgeInsets.all(10),
@@ -113,7 +117,9 @@ late Animation<double> _animation;
 
         // button daftar
          InkWell(
-          onTap:null,
+         onTap: () => {
+            Navigator.push(context, MaterialPageRoute(builder: (context)=> Daftar()))
+          },
          
           child: Container(
             margin: EdgeInsets.all(10),
