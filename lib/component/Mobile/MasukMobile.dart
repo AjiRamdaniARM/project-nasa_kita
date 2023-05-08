@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nasa_kita/component/desktop/Welcome.dart';
 import 'package:nasa_kita/component/desktop/daftar.dart';
 class MasukMobile extends StatefulWidget {
  MasukMobile({
@@ -177,9 +178,18 @@ Container(
       
         alignment: Alignment.topCenter,
         child:Stack(children: [
-          FittedBox(
-            child: Container(
-          margin: EdgeInsets.only(left: 105, top: 45),
+           
+        Container(height: 230,
+            child:  Image.asset("assets/image/nasa_kita.png", width: 270,),),
+
+            FittedBox(
+
+            child: 
+            InkWell(
+              onTap: () => 
+              Navigator.push(context, MaterialPageRoute(builder: (context) =>Welcome() )),
+              child: Container(
+          margin: EdgeInsets.only(left: 105, top: 35),
               child: Text('Keluar', textAlign: TextAlign.left, style: TextStyle(
         color: Color.fromRGBO(255, 255, 255, 1),
         fontFamily: 'Poppins',
@@ -187,10 +197,10 @@ Container(
         letterSpacing: 0 /*percentages not used in flutter. defaulting to zero*/,
         fontWeight: FontWeight.bold,
         height: 1
-      ),)),
+      ),)), )
+            
+           
           ),
-        Container(height: 230,
-            child:  Image.asset("assets/image/nasa_kita.png", width: 270,),)
         ],)
         
         ,)

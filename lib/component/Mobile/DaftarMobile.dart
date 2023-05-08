@@ -1,6 +1,9 @@
 
 import 'package:flutter/material.dart';
+import 'package:nasa_kita/component/Mobile/HomeMobile.dart';
+import 'package:nasa_kita/component/desktop/Welcome.dart';
 import 'package:nasa_kita/component/desktop/masuk.dart';
+import 'package:nasa_kita/component/home_nasa.dart';
 class DaftarMobile extends StatefulWidget {
  DaftarMobile({
     Key? key,
@@ -165,7 +168,9 @@ Container(
       )
     ),
                 InkWell(
-                    onTap: null,
+                    onTap: () => {
+        Navigator.push(context, MaterialPageRoute(builder: (context) => Home()))
+      },
                     child: Container(
                       margin: EdgeInsets.all(10),
                       width: 327,
@@ -203,13 +208,20 @@ Container(
       
         alignment: Alignment.topCenter,
         child:Stack(children: [
-          FittedBox(
+        
+
+          Container(height: 230,
+            child:  Image.asset("assets/image/nasa_kita.png", width: 270,),),
+       
+         FittedBox(
 
             child: 
             InkWell(
-              onTap: () => 
-              Navigator.pop(context),
+  onTap: () => {
+        Navigator.push(context, MaterialPageRoute(builder: (context) => Welcome()))
+      },
               child: Container(
+              
           margin: EdgeInsets.only(left: 105, top: 35),
               child: Text('Keluar', textAlign: TextAlign.left, style: TextStyle(
         color: Color.fromRGBO(255, 255, 255, 1),
@@ -222,9 +234,6 @@ Container(
             
            
           ),
-
-          Container(height: 230,
-            child:  Image.asset("assets/image/nasa_kita.png", width: 270,),)
         ],)
         
         ,)
