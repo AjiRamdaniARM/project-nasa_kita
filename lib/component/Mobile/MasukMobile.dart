@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nasa_kita/component/desktop/Welcome.dart';
 import 'package:nasa_kita/component/desktop/daftar.dart';
+import 'package:nasa_kita/component/home_nasa.dart';
 class MasukMobile extends StatefulWidget {
  MasukMobile({
     Key? key,
@@ -16,6 +17,9 @@ class _MasukMobileState extends State<MasukMobile> {
   final _formKey = GlobalKey<FormState>();
 final nama = TextEditingController();
 final katasandi = TextEditingController();
+final data50 = null;
+
+
   @override
   Widget build(BuildContext context) {
     return Center( 
@@ -140,7 +144,11 @@ Container(
       )
     ),
                 InkWell(
-                    onTap: null,
+                    onTap: (() {
+                      if(_formKey.currentState!.validate()) {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => Home(namaUser: nama.text, alamatUser: data50,),));
+                      }
+                    }),
                     child: Container(
                       margin: EdgeInsets.all(10),
                       width: 327,

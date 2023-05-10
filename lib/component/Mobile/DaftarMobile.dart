@@ -16,6 +16,8 @@ class DaftarMobile extends StatefulWidget {
 }
 
 class _DaftarMobileState extends State<DaftarMobile> {
+  final data = '';
+  final data1 = '';
   final _formKey = GlobalKey<FormState>();
 final namadaftar = TextEditingController();
 final katasandidaftar = TextEditingController();
@@ -169,7 +171,9 @@ Container(
     ),
                 InkWell(
                     onTap: () => {
-        Navigator.push(context, MaterialPageRoute(builder: (context) => Home()))
+                      if(_formKey.currentState!.validate()) {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => Home(namaUser: namadaftar.text, alamatUser: alamatdaftar.text,),))
+                      }
       },
                     child: Container(
                       margin: EdgeInsets.all(10),
