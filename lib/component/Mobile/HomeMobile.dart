@@ -129,10 +129,19 @@ Container(
       )
       ),
     Center(child: Container(child: Stack(children: [
-      Row(children: [
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
         Container(
-          child: null,
-        )
+          child: Text('Test1'),
+        ),
+        Container(
+          child: Text('Test2'),
+        ),
+        Container(
+          child: Text('Test3'),
+        ),
+       
       ],)
     ]),),)
     
