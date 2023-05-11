@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nasa_kita/component/Mobile/DaftarMobile.dart';
 import 'package:nasa_kita/component/desktop/Welcome.dart';
 import 'package:nasa_kita/component/desktop/daftar.dart';
 import 'package:nasa_kita/component/home_nasa.dart';
@@ -131,7 +132,9 @@ Container(
             
                  
                 InkWell(
-                    onTap: null,
+                    onTap: () => {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => Daftar()))
+                    },
                     child: Container(
                       margin: EdgeInsets.all(10),
                       width: 327,
@@ -151,7 +154,7 @@ Container(
                       ),
                       child: Center(
                         child: Text(
-                          "Masuk Akun",
+                          "Keluar Akun",
                           style: TextStyle(
                               color: Colors.white, fontFamily: 'Poppins-Bold'),
                         ),

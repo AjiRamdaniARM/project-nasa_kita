@@ -14,7 +14,12 @@ class HomeMobile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return 
+    Center(child: Stack(children: [
+
+
+            // element widget banner nasa
+Container(
       width: MediaQuery.of(context).size.width ,
         height: 241,
         decoration: const BoxDecoration(
@@ -30,8 +35,8 @@ class HomeMobile extends StatelessWidget {
       Container(
           margin: EdgeInsets.only(left: 20, top: 10),
           width: MediaQuery.of(context).size.width,
-     
           child: Stack(children: <Widget>[
+
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               textDirection: TextDirection.rtl,
@@ -120,6 +125,18 @@ class HomeMobile extends StatelessWidget {
           
       
     ])
-      ) ]));
+      ) ]
+      )
+      ),
+    Center(child: Container(child: Stack(children: [
+      Row(children: [
+        Container(
+          child: null,
+        )
+      ],)
+    ]),),)
+    
+    ],),);
+    
   }
 }
