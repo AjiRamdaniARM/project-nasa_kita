@@ -15,19 +15,19 @@ class HomeMobile extends StatelessWidget {
   Widget build(BuildContext context) {
 
     // url root
-      Future openBrowserURL({
-      required String url,
-      bool inApp = false,
-    }) async {
-      if (await canLaunch(url)) {
-        await launch(
-          url,
-          forceSafariVC: inApp,
-          forceWebView: inApp,
-          enableJavaScript: true,
-        );
-      }
-     }
+    //   Future openBrowserURL({
+    //   required String url,
+    //   bool inApp = false,
+    // }) async {
+    //   if (await canLaunch(url)) {
+    //     await launch(
+    //       url,
+    //       forceSafariVC: inApp,
+    //       forceWebView: inApp,
+    //       enableJavaScript: true,
+    //     );
+    //   }
+    //  }
 
     final data1 = '82.5';
     final data2 = '92.5';
@@ -156,10 +156,10 @@ Container(
         children: [
 FittedBox(
       child: Container(
-        
+alignment: Alignment.topLeft,
         margin: EdgeInsets.all(10),
         child: 
-      Text("DATA TABUNG SAMPAH", style: TextStyle(fontFamily: "poppins"),), 
+      Text("DATA TABUNG SAMPAH", style: TextStyle(fontFamily: 'MT_BOLD', fontWeight: FontWeight.bold,fontSize: 20,color: Colors.green,),), 
       ),
     ),
     Row(
@@ -294,6 +294,23 @@ InkWell(
       )
   ,
 ),
+
+Container(
+  child: Column(
+    children: [
+      Container(
+       alignment: Alignment.topLeft,
+       margin: EdgeInsets.all(20),
+        child: Text('Rekomendasi video pengolahan sampah', style: TextStyle(fontFamily: 'MT_BOLD', fontWeight: FontWeight.bold,fontSize: 20,color: Colors.green),),
+      ),
+      Container(
+       alignment: Alignment.bottomCenter,
+       margin: EdgeInsets.only(top: 80),
+        child: Text('Belum ada video tersedia', style: TextStyle(fontFamily: 'MT_BOLD', fontWeight: FontWeight.bold, color: Colors.black),),
+      ),
+    ],
+  ),
+)
 
 
        
