@@ -17,7 +17,7 @@ class _MasukMobileState extends State<MasukMobile> {
   final _formKey = GlobalKey<FormState>();
 final nama = TextEditingController();
 final katasandi = TextEditingController();
-final data50 = null;
+final data50 = 'Belum punya data di form masuk';
 
 
   @override

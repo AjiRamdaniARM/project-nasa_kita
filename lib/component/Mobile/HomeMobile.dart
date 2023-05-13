@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:nasa_kita/component/desktop/profile.dart';
 
@@ -14,8 +13,27 @@ class HomeMobile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    // url root
+      Future openBrowserURL({
+      required String url,
+      bool inApp = false,
+    }) async {
+      if (await canLaunch(url)) {
+        await launch(
+          url,
+          forceSafariVC: inApp,
+          forceWebView: inApp,
+          enableJavaScript: true,
+        );
+      }
+     }
+
+    final data1 = '82.5';
+    final data2 = '92.5';
+
     return 
-    Center(child: Stack(children: [
+    Container(child: Stack(children: [
 
 
             // element widget banner nasa
@@ -128,22 +146,163 @@ Container(
       ) ]
       )
       ),
-    Center(child: Container(child: Stack(children: [
-      Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+    Center(child: Container(
+
+      // element widget for fitur 
+      margin: EdgeInsets.only(top: 250),
+      child: Stack(children: [
+      Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
+FittedBox(
+      child: Container(
+        
+        margin: EdgeInsets.all(10),
+        child: 
+      Text("DATA TABUNG SAMPAH", style: TextStyle(fontFamily: "poppins"),), 
+      ),
+    ),
+    Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
         Container(
-          child: Text('Test1'),
+           width: 180,
+        height: 89,
+        decoration: BoxDecoration(
+          borderRadius : BorderRadius.only(
+            topLeft: Radius.circular(10),
+            topRight: Radius.circular(10),
+            bottomLeft: Radius.circular(10),
+            bottomRight: Radius.circular(10),
+          ),
+      color : Color.fromRGBO(0, 207, 95, 0.6000000238418579),
+  ),
+  child:
+  Column(children: [
+     Container(
+    alignment: Alignment.topCenter,
+    margin: EdgeInsets.all(10),
+    child:Text('Organik', style: TextStyle(fontFamily: 'poppins', color: Colors.white),),),
+    Container(child: Text(data1 + "Kg", style: TextStyle(fontFamily: "MT_BOLD", fontSize: 20, color: Colors.white),),)
+  ],)
+ 
+  
         ),
         Container(
-          child: Text('Test2'),
+           width: 180,
+        height: 89,
+        decoration: BoxDecoration(
+          borderRadius : BorderRadius.only(
+            topLeft: Radius.circular(10),
+            topRight: Radius.circular(10),
+            bottomLeft: Radius.circular(10),
+            bottomRight: Radius.circular(10),
+          ),
+      color : Color.fromRGBO(0, 207, 95, 0.6000000238418579),
+  ),
+  child: 
+    Column(children: [
+     Container(
+    alignment: Alignment.topCenter,
+    margin: EdgeInsets.all(10),
+    child:Text('Non Organik', style: TextStyle(fontFamily: 'poppins', color: Colors.white),),),
+    Container(child: Text(data2 + "Kg", style: TextStyle(fontFamily: "MT_BOLD", fontSize: 20, color: Colors.white),),)
+  ],)
+  ,
+        )
+      ],
+    ),
+InkWell(
+  onTap: null,
+  child: 
+   Container(
+        width: 370,
+        height: 61,
+        margin: EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          borderRadius : BorderRadius.only(
+            topLeft: Radius.circular(10),
+            topRight: Radius.circular(10),
+            bottomLeft: Radius.circular(10),
+            bottomRight: Radius.circular(10),
+          ),
+      boxShadow : [BoxShadow(
+          color: Color.fromRGBO(0, 0, 0, 0.25),
+          offset: Offset(-1,4),
+          blurRadius: 2
+      )],
+      color : Color.fromRGBO(255, 255, 255, 1),
+      border : Border.all(
+          color: Color.fromRGBO(0, 207, 95, 0.6000000238418579),
+          width: 1,
         ),
-        Container(
-          child: Text('Test3'),
+  ),
+  child: Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+      Container(
+        margin: EdgeInsets.all(10),
+        child: Image.network('https://cdn.icon-icons.com/icons2/1378/PNG/512/usertrash_92829.png', width: 40,),),
+      Container(
+        margin: EdgeInsets.all(20),
+        child: Text('Nabung Sampah',style: TextStyle(color: Colors.green),),)
+    ],
+  ),
+      )
+  ,
+),
+InkWell(
+  // onTap: () async {
+  //   final spnsn = 'https://sipsn.menlhk.go.id/sipsn/';
+  //   openBrowserURL(url: spnsn, inApp: true);
+
+  // },
+  child: 
+   Container(
+        width: 370,
+        height: 61,
+        // margin: EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          borderRadius : BorderRadius.only(
+            topLeft: Radius.circular(10),
+            topRight: Radius.circular(10),
+            bottomLeft: Radius.circular(10),
+            bottomRight: Radius.circular(10),
+          ),
+      boxShadow : [BoxShadow(
+          color: Color.fromRGBO(0, 0, 0, 0.25),
+          offset: Offset(-1,4),
+          blurRadius: 2
+      )],
+      color : Color.fromRGBO(255, 255, 255, 1),
+      border : Border.all(
+          color: Color.fromRGBO(0, 207, 95, 0.6000000238418579),
+          width: 1,
         ),
+  ),
+  child: Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+      Container(
+        margin: EdgeInsets.all(10),
+        child: Image.network('https://sipsn.menlhk.go.id/sipsn/assets/img/logo_klhk_sipsn_tight.png', width: 80,),),
+      Container(
+        margin: EdgeInsets.all(20),
+        child: Text('Lihat data lebih akurat',style: TextStyle(color: Colors.green),),)
+    ],
+  ),
+      )
+  ,
+),
+
+
        
       ],)
-    ]),),)
+    ]),),
+    
+    ),
+
+    
     
     ],),);
     

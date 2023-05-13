@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nasa_kita/component/Mobile/DaftarMobile.dart';
+import 'package:nasa_kita/component/Mobile/HomeMobile.dart';
 import 'package:nasa_kita/component/desktop/Welcome.dart';
 import 'package:nasa_kita/component/desktop/daftar.dart';
 import 'package:nasa_kita/component/home_nasa.dart';
@@ -133,7 +133,7 @@ Container(
                  
                 InkWell(
                     onTap: () => {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => Daftar()))
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => Home(namaUser:nama , alamatUser:alamat)))
                     },
                     child: Container(
                       margin: EdgeInsets.all(10),
