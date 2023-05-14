@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nasa_kita/component/desktop/profile.dart';
+import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomeMobile extends StatelessWidget {
 
@@ -15,19 +17,19 @@ class HomeMobile extends StatelessWidget {
   Widget build(BuildContext context) {
 
     // url root
-    //   Future openBrowserURL({
-    //   required String url,
-    //   bool inApp = false,
-    // }) async {
-    //   if (await canLaunch(url)) {
-    //     await launch(
-    //       url,
-    //       forceSafariVC: inApp,
-    //       forceWebView: inApp,
-    //       enableJavaScript: true,
-    //     );
-    //   }
-    //  }
+     Future openBrowserURL({
+     required String url,
+     bool inApp = false,
+     }) async {
+      if (await canLaunch(url)) {
+         await launch(
+           url,
+           forceSafariVC: inApp,
+           forceWebView: inApp,
+          enableJavaScript: true,
+       );
+      }
+     }
 
     final data1 = '82.5';
     final data2 = '92.5';
@@ -159,7 +161,7 @@ FittedBox(
 alignment: Alignment.topLeft,
         margin: EdgeInsets.all(10),
         child: 
-      Text("DATA TABUNG SAMPAH", style: TextStyle(fontFamily: 'MT_BOLD', fontWeight: FontWeight.bold,fontSize: 20,color: Colors.green,),), 
+      Text("DATA TABUNG SAMPAH", style: TextStyle(fontFamily: "MT_BOLD", color: Colors.green),), 
       ),
     ),
     Row(
@@ -182,7 +184,7 @@ alignment: Alignment.topLeft,
      Container(
     alignment: Alignment.topCenter,
     margin: EdgeInsets.all(10),
-    child:Text('Organik', style: TextStyle(fontFamily: 'poppins', color: Colors.white),),),
+    child:Text('Organik', style: TextStyle(fontFamily: 'MT_BOLD', color: Colors.white),),),
     Container(child: Text(data1 + "Kg", style: TextStyle(fontFamily: "MT_BOLD", fontSize: 20, color: Colors.white),),)
   ],)
  
@@ -252,11 +254,11 @@ InkWell(
   ,
 ),
 InkWell(
-  // onTap: () async {
-  //   final spnsn = 'https://sipsn.menlhk.go.id/sipsn/';
-  //   openBrowserURL(url: spnsn, inApp: true);
+  onTap: () async {
+    final spnsn = 'https://sipsn.menlhk.go.id/sipsn/';
+  openBrowserURL(url: spnsn, inApp: true);
 
-  // },
+   },
   child: 
    Container(
         width: 370,

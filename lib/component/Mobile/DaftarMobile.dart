@@ -138,9 +138,8 @@ Container(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          Positioned(
-        top: 0,
-        left: 0,
+          Expanded(
+    
         child: Text('Punya Akun?', textAlign: TextAlign.left, style: TextStyle(
         color: Color.fromRGBO(102, 101, 101, 1),
         fontFamily: 'Poppins',
@@ -151,11 +150,14 @@ Container(
       ),)
       ),
       
-     InkWell(
+
+
+      Expanded(child: InkWell(
       onTap: () => {
         Navigator.push(context, MaterialPageRoute(builder: (context) => Masuk()))
       },
       child:  Container(
+ margin: EdgeInsets.only(left: 70),
 
         child: Text('Masuk Akun', textAlign: TextAlign.left, style: TextStyle(
         color: Color.fromRGBO(2, 148, 0, 1),
@@ -165,7 +167,8 @@ Container(
         fontWeight: FontWeight.normal,
         height: 1
       ),)
-      ),)
+      ),), ),
+    
         ]
       )
     ),

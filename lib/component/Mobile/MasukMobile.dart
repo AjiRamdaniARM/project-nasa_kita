@@ -104,32 +104,32 @@ Container(
                   ),
                 ),
             
-            
+           
                  Container(
       width: 340,
       height: 21,
       
-      child: Row(
+      child: 
+      
+      Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          Positioned(
-        top: 0,
-        left: 0,
-        child: Text('Belum punya akun?', textAlign: TextAlign.left, style: TextStyle(
+          Expanded(child:     Text('Belum punya akun?', textAlign: TextAlign.left, style: TextStyle(
         color: Color.fromRGBO(102, 101, 101, 1),
         fontFamily: 'Poppins',
         fontSize: 14,
         letterSpacing: 0 /*percentages not used in flutter. defaulting to zero*/,
         fontWeight: FontWeight.normal,
         height: 1
-      ),)
-      ),
-      
-     InkWell(
+      ),),
+     ),
+       
+      Expanded(child:   InkWell(
       onTap: () => {
         Navigator.push(context, MaterialPageRoute(builder: (context) => Daftar()))
       },
       child:  Container(
+        margin: EdgeInsets.only(left: 30),
 
         child: Text('Buat akun baru', textAlign: TextAlign.left, style: TextStyle(
         color: Color.fromRGBO(2, 148, 0, 1),
@@ -140,6 +140,9 @@ Container(
         height: 1
       ),)
       ),)
+        ),
+   
+         
         ]
       )
     ),

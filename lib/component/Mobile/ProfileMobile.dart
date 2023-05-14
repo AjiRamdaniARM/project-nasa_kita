@@ -132,9 +132,8 @@ Container(
             
                  
                 InkWell(
-                    onTap: () => {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => Home(namaUser:nama , alamatUser:alamat)))
-                    },
+                    onTap:() => 
+              Navigator.push(context, MaterialPageRoute(builder: (context) =>Welcome() )),
                     child: Container(
                       margin: EdgeInsets.all(10),
                       width: 327,
@@ -262,7 +261,8 @@ Container(
             child: 
             InkWell(
               onTap: () => 
-              Navigator.push(context, MaterialPageRoute(builder: (context) =>Welcome() )),
+              Navigator.push(context, MaterialPageRoute(builder: (context) =>Home(namaUser: nama
+              , alamatUser: alamat) )),
               child: Container(
           margin: EdgeInsets.only(left: 105, top: 35),
               child: Text('Keluar', textAlign: TextAlign.left, style: TextStyle(
